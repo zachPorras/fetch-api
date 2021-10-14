@@ -7,9 +7,9 @@ site = Blueprint('site', __name__, template_folder='site_templates')
 def home():
     return render_template('index.html')
 
-@site.route('/my_points')
-def my_points():
-    return render_template('my_points.html')
+@site.route('/balances')
+def balances():
+    return render_template('balances.html')
 
 @site.route('/transactions')
 def add_transactions():
