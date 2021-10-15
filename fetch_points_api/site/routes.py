@@ -17,8 +17,8 @@ def add_transactions():
     form = AddTransactionsForm()
     if request.method == 'POST' and form.validate_on_submit:
         points = form.points.data
-        payer = form.payer.data
-        print(points, payer)
+        partner_name = form.payer.data
+        print(points, partner_name)
 
     return render_template('add_transactions.html', form = form)
 
