@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from fetch_points_api.forms import SpendPointsForm, TransactionForm
+from fetch_points_api.forms import SpendPointsForm, AddTransactionsForm
 
 site = Blueprint('site', __name__, template_folder='site_templates')
 
@@ -12,10 +12,10 @@ def home():
 def balances():
     return render_template('balances.html')
 
-@site.route('/transactions', methods=['POST'])
+@site.route('/add_transactions', methods=['POST', 'PUT', 'GET'])
 def add_transactions():
-    form = TransactionForm()
-    return render_template('transactions.html', form = form)
+    form = AddTransactionsForm()
+    return render_template('add_transactions.html', form = form)
 
 @site.route('/spend_points', methods=['POST', 'PUT', 'GET'])
 def spend_points():

@@ -1,10 +1,14 @@
 
-<!-- Spend Points Form -->
+<!-- Add Transactions Form -->
 <div class="row">
     <div class="col-md-3 offset-4">
         <form method="POST">
             {{ form.hidden_tag() }}
             <div class="form-group">
+                <fieldset>
+                    {{ form.payer.label }}
+                    {{ form.payer(class = "form-control", placeholder = "Enter Partner aka Payer") }}
+                </fieldset>
                 <fieldset>
                     {{ form.points.label }}
                     {{ form.points(class = "form-control", placeholder = "Enter Points") }}
