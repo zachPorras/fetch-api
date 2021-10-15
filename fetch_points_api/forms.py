@@ -12,3 +12,6 @@ class AddTransactionsForm(FlaskForm):
 class SpendPointsForm(FlaskForm):
     points = IntegerField('Points', validators=[DataRequired()])
     submit_button = SubmitField()
+
+class CheckBalances(FlaskForm):
+    submit_button = SubmitField()

@@ -1,12 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import uuid
-
+from flask_marshmallow import Marshmallow
 
 
 db = SQLAlchemy()
 
-
+ma = Marshmallow()
 
 class Partner(db.Model):
     partner_id = db.Column(db.String, primary_key=True, unique=True)
@@ -34,3 +34,11 @@ class Transactions(db.Model):
 
     def set_id(self):
         return str(uuid.uuid4())
+
+
+
+class PartnerSchema(ma.Schema):
+    class Meta:
+        fields = ['partner_name', 'points']
+
+partners_schema = PartnerSchema(many = True)
